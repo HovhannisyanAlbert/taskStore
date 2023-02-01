@@ -1,0 +1,13 @@
+@import "./variables.scss";
+.main {
+  .store {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(332px, 1fr));
+    justify-content: space-between;
+    padding: 26px 70px;
+    flex-wrap: wrap;
+    @media screen and (max-width: $laptop) {
+      padding: 10px;
+    }
+  }
+}

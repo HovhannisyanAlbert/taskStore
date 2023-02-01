@@ -1,0 +1,157 @@
+@import "./variables.scss";
+.card {
+  display: flex;
+  justify-content: center;
+  width: 332px;
+  height: 462px;
+  border: 1px solid #f5f5f7;
+  margin-bottom: 30px;
+  @media screen and (max-width: $phone) {
+    margin: 0 auto !important;
+  }
+  & > .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    width: 85%;
+    & > img {
+      margin: 0 auto;
+    }
+    & > .hit {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: 15px;
+      right: 0;
+      color: #fff;
+      margin-left: 5px;
+      font: {
+        size: 15px;
+        weight: 700;
+      }
+      background-image: url("./../public/rectangle-hit.svg");
+      width: 71px;
+      height: 24px;
+    }
+    & > .category {
+      margin-bottom: 5px;
+      small {
+        color: #999999;
+      }
+    }
+    & > .title,
+    .description {
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      font: {
+        size: 14px;
+      }
+      line-height: 22px;
+    }
+    & > .price {
+      margin: 10px 0;
+      small {
+        color: #999999;
+      }
+    }
+    & > .buttons {
+      display: flex;
+      justify-content: space-between;
+      height: 40px;
+      & > .basket {
+        display: flex;
+        border-radius: 90px;
+        & > .buttonPurchasedProduct {
+          border: none;
+          outline: none;
+          color: #fff;
+          background-color: #00b177;
+          width: 175px;
+          height: 40px;
+          border-radius: inherit;
+        }
+        & > .buttonBasket {
+          border: none;
+          outline: none;
+          color: #fff;
+          background-color: #4056a1;
+          border-radius: inherit;
+          width: 100px;
+          z-index: 1;
+          cursor: pointer;
+        }
+        & > .count {
+          position: relative;
+          border-radius: inherit;
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+          background-color: #f5f5f7;
+          width: 100px;
+          right: 10%;
+          z-index: 0;
+          & > .elements {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            width: 90%;
+            & > .num {
+              font-size: 12px;
+            }
+            & > .math {
+              cursor: pointer;
+              color: #c6c6ce;
+            }
+          }
+        }
+      }
+      & > .favouriteUnselected,
+      .favouriteSelected {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-width: 1px;
+        border-style: solid;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        span {
+          display: block;
+          width: 11px;
+          height: 16px;
+          position: relative;
+        }
+      }
+      .favouriteSelected {
+        border-color: #ff0000;
+        span {
+          &:first-child {
+            left: 2px;
+            background: url("./../public/heart-first-part-red.svg") no-repeat;
+          }
+          &:last-child {
+            right: 2px;
+            background: url("./../public/heart-second-part-red.svg") no-repeat;
+          }
+        }
+      }
+      .favouriteUnselected {
+        border-color: #f5f5f7;
+        span {
+          &:first-child {
+            left: 2px;
+            background: url("./../public/heart-first-part-gray.svg") no-repeat;
+          }
+          &:last-child {
+            right: 2px;
+            background: url("./../public/heart-second-part-gray.svg") no-repeat;
+          }
+        }
+      }
+    }
+  }
+}

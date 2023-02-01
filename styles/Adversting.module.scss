@@ -1,0 +1,95 @@
+@import "./variables.scss";
+.advertising {
+  display: flex;
+  flex-direction: column;
+  width: 332px;
+  height: 462px;
+  justify-content: center;
+  @media screen and (max-width: $phone) {
+    margin: 0 auto !important;
+  }
+  & > h2 {
+    font: {
+      size: 28px;
+      family: "Roboto";
+      weight: 500;
+    }
+  }
+  & > .content {
+    .arrow {
+      display: flex;
+      align-items: center;
+      margin: 20px 0;
+      color: gray;
+      span:first-child {
+        width: 40px;
+        height: 10px;
+        background: url("../public/vector.svg") no-repeat;
+      }
+      span:last-child {
+        position: relative;
+        right: 8px;
+        width: 11px;
+        height: 25px;
+        background: url("../public/vectorline.svg") no-repeat;
+      }
+    }
+    .wrap {
+      display: flex;
+      margin-bottom: 10px;
+      height: 140px;
+      & > .suggest {
+        display: flex;
+        background-color: #636b7f;
+        & > .suggest__items {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          width: inherit;
+          .discount {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: black;
+            margin-left: 5px;
+            font: {
+              size: 15px;
+              weight: 700;
+            }
+            background-image: url("./../public/rectangle.svg");
+            width: 71px;
+            height: 24px;
+          }
+          & > .text {
+            color: #fff;
+            line-height: 21px;
+            margin-left: 14px;
+            & > span {
+              display: flex;
+              color: black;
+            }
+          }
+          & > .select {
+            display: flex;
+            align-items: center;
+            margin-left: 14px;
+            font-size: 11px;
+            border: 0;
+            background: none;
+            outline: none;
+            color: rgb(230, 223, 223);
+            &::after {
+              content: "";
+              position: relative;
+              background: url("./../public/circle.svg") no-repeat;
+              width: 20px;
+              height: 20px;
+              right: 7px;
+              top: 1px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
